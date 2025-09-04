@@ -1,0 +1,270 @@
+/* SUMMARY
+1. Global
+2. Header
+3. What we do
+4. Our results
+5. Contact us
+6. Footer
+*/ 
+
+/*** 1. Global ***/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --color-white: #F2F2F2;
+    --color-black: #071629;
+    --color-red: #FF6565;
+    --font-family-base: "source sans pro", sans-serif;
+}
+
+body {
+    font-family: var(--font-family-base);
+    display: flex;
+    flex-direction: column;
+}
+
+/* link */
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+a:hover {
+    color: var(--color-red);
+}
+
+/* text */
+p {
+    font-size: 16px;
+}
+
+/* list */
+ul li {
+    list-style: none;
+}
+
+/* button */
+button {
+    color: var(--color-white);
+    background: var(--color-red);
+    font-size: 14px;
+    font-weight: 700;
+    padding: .8rem 1.5rem;
+    border-radius: 1.5rem;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/*** 2. Header ***/
+
+/** HEADER DESKTOP FORMAT **/
+.header {
+    position: absolute;
+    width: 100%;
+    max-width: 1400px;
+    height: 800px;
+    box-sizing: border-box;
+    padding: 1.5rem 5rem;
+    background-image: url(images/headphones_hero_1.jpg);
+    background-position: center;
+    color: var(--color-white);
+}
+
+/* Menu */
+.header .header-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.header img {
+    width: 161px;
+    height: 32px;
+}
+
+.header .nav {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.menu-navigation .nav-text {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Menu button for hamburger */
+.menu-btn {
+    display: none;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* header banner */
+.header .header-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 19rem;
+}
+
+.banner-1, .banner-2, .banner-3 {
+    text-align: center;
+}
+
+/* title and text banner*/
+.banner-1 {
+    padding-bottom: 2.5rem;
+}
+
+.banner-1 .banner-title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.banner-1 .banner-text {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* button banner */
+.banner-2 {
+    padding-bottom: 4.7rem;
+}
+
+.banner-2 .banner-button {
+    box-shadow: 0 2px 10px var(--color-black);
+}
+
+/* description banner */
+.banner-3 {
+    max-width: 1000px;
+    width: 75%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+/** HEADER TAB FORMAT **/
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 1.5rem 2.5rem;
+    }    
+}
+
+/** HEADER PHONE FORMAT **/
+@media screen and (max-width: 480px) {
+
+    .header .nav {
+        gap: 1rem;
+    }
+
+    .nav .nav-text {
+        font-size: 16px;
+    }
+
+    .menu-navigation {
+        display: none;
+        flex: 1;
+    }
+
+    .header .nav {
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-icon .nav-icon {
+        background: var(--color-white);
+        display: block;
+        width: 1rem;
+        height: .2rem;
+        position: relative;
+        border-radius: 15rem;
+        transition: background .2s ease-out;
+    }
+
+    .header .menu-icon .nav-icon::before,
+    .header .menu-icon .nav-icon::after {
+        content: "";
+        display: block;
+        height: 80%;
+        position: absolute;
+        border-radius: 15rem;
+        background: var(--color-white);
+        transition: all .2s ease-out;
+    }
+
+    .header .menu-icon .nav-icon::before {
+        top: .7rem;
+        width: 1.5rem;
+    }
+
+    .header .menu-icon .nav-icon::after {
+        top: -.7rem;
+        width: 2rem;
+    }
+
+    /* hamburger */
+    .header .menu-btn {
+        display: none;
+    }
+
+    .menu-btn:checked ~ .menu-navigation {
+        display: block;
+    }
+
+    .menu-btn:checked ~ .menu-navigation .nav {
+        max-height: 100%;
+        overflow: inherit;
+    }
+
+    .header .menu-btn:checked + .menu-icon .nav-icon {
+        background: transparent;
+    }
+
+    .menu-btn:checked + .menu-icon .nav-icon::before {
+        transform: rotate(-45deg);
+    }
+
+    .menu-btn:checked + .menu-icon .nav-icon::after {
+        transform: rotate(45deg);
+    }
+
+    .menu-btn:checked + .menu-icon .nav-icon::before,
+    .menu-btn:checked + .menu-icon .nav-icon::after {
+        top: 0;
+        width: 2rem;
+    }
+}
+
+/*** 3. What we do ***/
+
+/*** 4. Our results ***/
+
+/*** 5. Contact us ***/
+
+/*** 6. Footer ***/

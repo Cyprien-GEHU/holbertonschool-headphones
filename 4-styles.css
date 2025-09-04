@@ -1,0 +1,578 @@
+/* SUMMARY
+1. Global
+2. Header
+3. What we do
+4. Our results
+5. Contact us
+6. Footer
+*/ 
+
+/*** 1. Global ***/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --color-white: #F2F2F2;
+    --color-black: #071629;
+    --color-red: #FF6565;
+    --font-family-base: "source sans pro", sans-serif;
+    --color-border-input-text: #979797;
+}
+
+body {
+    font-family: var(--font-family-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* link */
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+a:hover {
+    color: var(--color-red);
+}
+
+/* image */
+img {
+    width: 161px;
+    height: 32px;
+}
+
+/* text */
+p {
+    font-size: 16px;
+}
+
+/* list */
+ul li {
+    list-style: none;
+}
+
+/* button */
+button {
+    color: var(--color-white);
+    background: var(--color-red);
+    font-size: 14px;
+    font-weight: 700;
+    padding: .8rem 1.5rem;
+    border-radius: 1.5rem;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/*** 2. Header ***/
+
+/** HEADER DESKTOP FORMAT **/
+.header {
+    width: 100%;
+    max-width: 1400px;
+    height: 800px;
+    box-sizing: border-box;
+    padding: 1.5rem 5rem;
+    margin-bottom: 6rem;
+    background-image: url(images/headphones_hero_1.jpg);
+    background-position: center;
+    color: var(--color-white);
+}
+
+/* Menu */
+.header .header-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.header .nav {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.menu-navigation .nav-text {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Menu button for hamburger */
+.menu-btn {
+    display: none;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* header banner */
+.header .header-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 19rem;
+}
+
+.banner-1, .banner-2, .banner-3 {
+    text-align: center;
+}
+
+/* title and text banner*/
+.banner-1 {
+    padding-bottom: 2.5rem;
+}
+
+.banner-1 .banner-title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.banner-1 .banner-text {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* button banner */
+.banner-2 {
+    padding-bottom: 4.7rem;
+}
+
+.banner-2 .banner-button {
+    box-shadow: 0 2px 10px var(--color-black);
+}
+
+/* description banner */
+.banner-3 {
+    max-width: 1000px;
+    width: 75%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+/** HEADER TAB FORMAT **/
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 1.5rem 2.5rem;
+    }    
+}
+
+/** HEADER PHONE FORMAT **/
+@media screen and (max-width: 480px) {
+
+    .header .nav {
+        gap: 1rem;
+    }
+
+    .nav .nav-text {
+        font-size: 16px;
+    }
+
+    .menu-navigation {
+        display: none;
+        flex: 1;
+    }
+
+    .header .nav {
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-icon .nav-icon {
+        background: var(--color-white);
+        display: block;
+        width: 1rem;
+        height: .2rem;
+        position: relative;
+        border-radius: 15rem;
+        transition: background .2s ease-out;
+    }
+
+    .header .menu-icon .nav-icon::before,
+    .header .menu-icon .nav-icon::after {
+        content: "";
+        display: block;
+        height: 80%;
+        position: absolute;
+        border-radius: 15rem;
+        background: var(--color-white);
+        transition: all .2s ease-out;
+    }
+
+    .header .menu-icon .nav-icon::before {
+        top: .7rem;
+        width: 1.5rem;
+    }
+
+    .header .menu-icon .nav-icon::after {
+        top: -.7rem;
+        width: 2rem;
+    }
+
+    /* hamburger */
+    .header .menu-btn {
+        display: none;
+    }
+
+    .menu-btn:checked ~ .menu-navigation {
+        display: block;
+    }
+
+    .menu-btn:checked ~ .menu-navigation .nav {
+        max-height: 100%;
+        overflow: inherit;
+    }
+
+    .header .menu-btn:checked + .menu-icon .nav-icon {
+        background: transparent;
+    }
+
+    .menu-btn:checked + .menu-icon .nav-icon::before {
+        transform: rotate(-45deg);
+    }
+
+    .menu-btn:checked + .menu-icon .nav-icon::after {
+        transform: rotate(45deg);
+    }
+
+    .menu-btn:checked + .menu-icon .nav-icon::before,
+    .menu-btn:checked + .menu-icon .nav-icon::after {
+        top: 0;
+        width: 2rem;
+    }
+}
+
+/*** 3. What we do ***/
+
+/*about */
+.about {
+    text-align: center;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* about banner */
+
+.about-banner {
+    width: 637px;
+    padding-bottom: 5rem;
+}
+
+.about-title {
+    font-size: 32px;
+    font-weight: 600;
+    padding-bottom: 3rem;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+/* card */
+.card {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.card-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+    
+}
+
+.icon {
+    color: var(--color-red);
+    font-size: 94px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    padding-bottom: .5rem;
+}
+
+.card-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    width: 70%;
+}
+
+/** TABLET ABOUT FORMAT **/
+@media screen and (max-width:768px) {
+    .card {
+        flex-wrap: wrap;
+        justify-content:space-evenly;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .about-banner {
+        width: 95%;
+    }
+
+    .card-text {
+        width: 49%;
+    }
+    
+}
+
+/*** 4. Our results ***/
+
+.result {
+    background-image: url(images/headphones_hero_2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px;
+    max-width: 1400px;
+    width: 100%;
+    color: var(--color-white);
+    padding: 3rem 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Result banner */
+
+.result-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    padding-bottom: 3rem;
+}
+
+.result-banner-title {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 600;
+    padding: 8rem 0 3rem 0;
+}
+
+.result-banner-text {
+    width: 65%;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    font-weight: 400;
+}
+
+
+/* Result card */
+.result-card {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    max-width: 1000px;
+}
+
+.result-card-element {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.pentagon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.result-card-content {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  pointer-events: none;
+}
+
+.result-card-title {
+  font-size: 46px;
+  font-weight: bold;
+      margin: .7rem 0;
+}
+
+.result-card-text {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media screen and (max-width:768px) {
+    .result{
+        height: 876px;
+    }
+
+    .result-banner {
+        padding-bottom: 5rem;
+    }
+
+    .result-banner-title{
+        padding: 11.5rem 0 3rem 0;
+    }
+
+    .result-banner-text {
+        width: 85%;
+    }
+
+    .result-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem 4rem;
+        justify-content: center;
+        align-items: center;
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .result{
+        height: 1491px;
+    }
+
+    .result-card {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+}
+    
+/*** 5. Contact us ***/
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    padding: 7rem 0;
+}
+
+/* contact banner */
+.contact-top {
+    margin-bottom: 2.5rem;
+}
+
+.contact-title {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* fieldset contact */
+.contact-fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem
+}
+
+.contact-form {
+    font-size: 14px;
+    font-weight: 600;
+    width: 20.9rem;
+    height: 1.8rem;
+    border-bottom: solid 1px var(--color-border-input-text);
+}
+
+.contact-form::placeholder {
+    color: var(--color-black);
+}
+
+.contact-button {
+    margin-top: 2.5rem;
+}
+
+/*** 6. Footer ***/
+
+.footer {
+    color: var(--color-white);
+    background: var(--color-black);
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 0 2rem 0;
+}
+
+/* footer container */
+.footer-container {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3.5rem 0;
+}
+
+.footer-social-network {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-network {
+    font-size: 30px;
+}
+
+/* footer politic */
+
+.politic {
+    opacity: 37.5%;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 0 0 2rem 0;
+    }
+    .footer-container {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+}
